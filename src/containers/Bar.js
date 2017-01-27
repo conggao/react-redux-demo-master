@@ -4,8 +4,20 @@ import { connect } from 'react-redux'
 // import { fetchPostsIfNeeded, refreshData } from '../actions/count'
 import {fetchJsonList} from '../actions/jsonAction'
 class Bar extends Component {
+    rendData(){
+        const {datas} = this.props;
+        let lists = datas.lists;
+        if ("undefined"!=typeof lists)
+           return (lists.map(
+               (e,i)=>
+               <div className="well well-sm">
+                   {e.title}
+               </div>
+            )
+           )
+    }
     render() {
-        const { lists, fetchJsonList } = this.props;
+        const { fetchJsonList } = this.props;
         
         return (
             <div>
@@ -13,10 +25,7 @@ class Bar extends Component {
                     <button type="button" className="btn btn-default" onClick={ ()=>fetchJsonList()}>加载数据</button>
                 </div>
                 <p></p>
-                {lists.map(
-                    (e, index) =>
-                    <div className="well well-sm" >{e.id}</div>
-                )}
+                {this.rendData()}
             </div>
         )
     }
@@ -24,7 +33,7 @@ class Bar extends Component {
 
 const getBarState = state => {
     return {
-        lists: state.updateJson.jsonList
+        datas: state.updateJson.jsonList
     }
 };
 

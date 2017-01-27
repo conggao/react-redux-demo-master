@@ -17,17 +17,16 @@ export const getJsonList = jsonList => {
 };
 function fetchList() {
     return function(dispatch){
-        return fetch('http://localhost:8080/news/get/view', {
-            method: "post",
-            mode: "no-cors",
-            headers: {"content-type":"application/x-www-form-urlencoded", "charset":"utf-8",},
+        return fetch('http://localhost:8085/Json/getJsonList', {
+            method:"GET",
+            headers: { "charset":"utf-8"},
         }).then(
             (res)=> {
-                return res.json;
+                return res.json();
             }
         ).then(
             (data)=> {
-                console.log(JSON.parse(data));
+                console.log(data);
                 return dispatch(getJsonList(data));
             }
         ).catch(e=> {

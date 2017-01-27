@@ -6,7 +6,7 @@ const jsonState = {
     jsonList: []
 };
 export function updateJson(state = jsonState, action) {
-    switch (action) {
+    switch (action.type) {
         case GETJSONLIST:
             return Object.assign({}, state, {jsonList: action.jsonList});
             break;

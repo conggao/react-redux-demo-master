@@ -3,8 +3,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPostsIfNeeded, refreshData } from '../actions/count'
 class Bar extends Component {
+    rendData(){
+        const {data1} =this.props;
+        let lists = data1.lists;
+        if("undefined" != typeof lists)
+        return(
+                lists.map(
+                    (e, index) =>
+                    <div className="well well-sm" >{e.title}</div>
+                )
+
+        )
+    }
     render() {
-        const { lists, fetchPostsIfNeeded } = this.props;
+        const {  fetchPostsIfNeeded } = this.props;
         
         return (
             <div>
@@ -12,10 +24,7 @@ class Bar extends Component {
                     <button type="button" className="btn btn-default" onClick={ ()=>fetchPostsIfNeeded()}>加载数据</button>
                 </div>
                 <p></p>
-                {lists.map(
-                    (e, index) =>
-                    <div className="well well-sm" >{e.title}</div>
-                )}
+                {this.rendData()}
             </div>
         )
     }
@@ -23,7 +32,7 @@ class Bar extends Component {
 
 const  getList= state => {
     return {
-        lists: state.update.data
+        data1: state.update.data
     }
 };
 

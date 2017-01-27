@@ -34,7 +34,6 @@ function fetchPosts() {
     return dispatch => {
         return fetch('data.json')
             .then((res) => {
-                console.log(res.status);
                 return res.json()
             })
             .then((data) => {
