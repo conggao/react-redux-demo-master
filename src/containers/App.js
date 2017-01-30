@@ -17,16 +17,7 @@ export default class App extends Component {
                                 <Link to="/index" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>计数器</Link>
                             </li>
                             <li>
-                                <Link to="/foo" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>静态数据</Link>
-                            </li>
-                            <li>
-                                <Link to="/bar" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>动态数据</Link>
-                            </li>
-                            <li>
-                                <Link to="/localBar" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>本地静态数据</Link>
-                            </li>
-                            <li>
-                                <Link to="/antd" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>结合antd</Link>
+                                <Link to="/JsonList" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>json列表</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,4 @@
 export App from './App'
 export Home from './Home'
-export Foo from './Foo'
 export JsonList from './JsonList'
 export Antd from './Antd'
