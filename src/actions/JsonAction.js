@@ -15,8 +15,17 @@ export const getJsonList = jsonList => {
         jsonList
     }
 };
+function fetchAddJsonData(data) {
+    return (dispatch)=> {
+        return fetch("http://localhost:8085/Json/addJson", {
+            method: "POST",
+            body: data,
+            headers: {"charset": "utf-8"}
+        })
+    }
+}
 function fetchList() {
-    return function(dispatch){
+    return (dispatch)=>{
         return fetch('http://localhost:8085/Json/getJsonList', {
             method:"GET",
             headers: { "charset":"utf-8"},
@@ -35,10 +44,16 @@ function fetchList() {
     }
 
 }
-export function fetchJsonList() {
+export function fetchGetJsonList() {
     return (dispatch, getState)=> {
         return dispatch(fetchList());
     }
+}
+export function fetchAddJson(data) {
+    return(dispatch,getState)=>{
+        return dispatch(fetchAddJsonData(data));
+    }
+
 }
 
 

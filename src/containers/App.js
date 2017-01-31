@@ -17,7 +17,12 @@ export default class App extends Component {
                                 <Link to="/index" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>计数器</Link>
                             </li>
                             <li>
-                                <Link to="/JsonList" activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>json列表</Link>
+                                <Link to="/AddJson"
+                                      activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>添加json</Link>
+                            </li>
+                            <li>
+                                <Link to="/JsonList"
+                                      activeStyle={{color: '#555', backgroundColor: '#e7e7e7'}}>json列表</Link>
                             </li>
                         </ul>
                     </div>
