@@ -19,8 +19,8 @@ function fetchAddJsonData(data) {
     return (dispatch)=> {
         return fetch("http://localhost:8085/Json/addJson", {
             method: "POST",
-            body: data,
-            headers: {"charset": "utf-8"}
+            body: JSON.stringify(data),
+            headers: {"Content-type":"application/json","charset": "utf-8"}
         })
     }
 }

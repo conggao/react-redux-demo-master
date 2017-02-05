@@ -1,7 +1,7 @@
 /**
  * Created by yons on 2017/1/30.
  */
-import {GETFORMDATA} from '../constants'
+import {GETFORMDATA,CHANGEFORMSTATE} from '../constants'
 import 'whatwg-fetch'
 export const addFormData=formData=>{
     return{
@@ -9,11 +9,15 @@ export const addFormData=formData=>{
         formData
     }
 };
-function fetchJsonData(data) {
-    return fetch('')
-
-}
-export function fetchAddJsonData(data) {
-
-
+export const changeFormState=(data,name)=>{
+    return{
+        type:CHANGEFORMSTATE,
+        name,
+        data,
+    }
+};
+export function changeState(data,name) {
+    return(dispatch,getState)=>{
+        return dispatch(changeFormState(data,name));
+    }
 }
