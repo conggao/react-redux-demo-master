@@ -5,3 +5,6 @@ export const GETFORMDATA="GETFROMDATA";
 export const CHANGEFORMSTATE="CHANGEFORMSTATE";
 /*构造form表单*/
 export const GETFORMMATE = "GETFORMMATE";
+
+export const ADDCAT="ADDCAT";
+export const ADDSUBCAT="ADDSUBCAT";
